@@ -30,13 +30,20 @@
 		document.getElementById("winNum").setAttribute("max", parseInt(document.getElementById("peopleNum").value)-1);
 	}
 </script>
-	
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+</style>
 <title>뽑기</title>
 </head>
 <body>
 <div class="jumbotron jumbotron-fluid">
  <div class="container">
    <h3 class="display-4">뽑기</h3>
+   <p>뽑기를 진행하기 전 사람마다 번호를 정해주세요</p>
  </div>
 </div>
 		
@@ -50,12 +57,10 @@
 						사람 수
 						<input type="number" id="peopleNum" name="peopleNum" min="0" max="100" onChange="changeMax()" class="form-control">
 					</label>
-				</div>
-				
-				<div class="form-group">
+					
 					<label>
 						뽑기 수
-						<input type="number" id="winNum" name="winNum" min="0" max="100" class="form-control">
+						<input type="number" id="winNum" name="winNum" min="0" max="100" class="form-control  form-inline">
 					</label>
 				</div>
 				
@@ -66,7 +71,6 @@
 				<button type="button" onClick="chk_eventForm()" class="form-control btn btn-outline-success btn-lg btn-block">뽑기</button>
 				<input type="reset" value="양식 초기화" class="form-control btn btn-outline-warning btn-lg btn-block">
 			</form>
-			
 		</div>
 	</div>
 </div>
