@@ -22,6 +22,10 @@
 		 $("#btnOpen").click(function() {
              $(".unvisual").removeClass("unvisual");
          });
+		 
+		 $("#btnClose").click(function() {
+             $("div.card-body").addClass("unvisual");
+         });
 	});
 </script>
 
@@ -52,6 +56,14 @@
 	
 	for(int i = 0; i < peopleNum; i++) {
 		arrInt[i] = (int)(Math.random()*100+1);
+		
+		 for(int searchCur = 0; searchCur < i; searchCur++){
+	        if(arrInt[i] == arrInt[searchCur]){
+	            i--; // insertCur를 앞으로 민다
+	            break; // 다음 것을 검색할 필요가 없으므로 중복검사 반복을 나갑니다.
+	        }
+	     }
+		 
 	}
 	
 	System.arraycopy(arrInt, 0, arrIntDupl, 0, peopleNum);
@@ -82,6 +94,7 @@
 		<div class="col-md-12" style="text-align: center;">
 			<h3><%= winNum %> of <%= peopleNum %></h3>
 			<button type="button" id="btnOpen" class="form-control btn btn-outline-success btn-lg btn-block">전체 공개</button>
+			<button type="button" id="btnClose" class="form-control btn btn-outline-warning btn-lg btn-block">전체 가리기</button>
 		</div>
 	
 		<% for(int i = 0; i < peopleNum; i++) { %>
